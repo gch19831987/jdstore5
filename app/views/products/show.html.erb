@@ -65,7 +65,7 @@ return true}else{if(z&&!a(this).prev().length){ac();return true}}g(a7,false)}}}}
 						<ul id="etalage">
 							<li>
 
-								<a href="optionallink.html">
+								<a href="">
 
     <% if @product.image.present? %>
       <%= image_tag(@product.image.medium.url, class: "etalage_thumb_image img-responsive") %>
@@ -77,6 +77,21 @@ return true}else{if(z&&!a(this).prev().length){ac();return true}}g(a7,false)}}}}
     <% end %>
 								</a>
 							</li>
+							<li>
+
+								<a href="">
+
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "etalage_thumb_image img-responsive") %>
+      <%= image_tag(@product.image.medium.url, class: "etalage_source_image img-responsive") %>
+
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "etalage_thumb_image img-responsive") %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "etalage_source_image img-responsive") %>
+    <% end %>
+								</a>
+							</li>
+	
 						</ul>
 
 					</div>	
