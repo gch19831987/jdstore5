@@ -1,29 +1,4 @@
 <div class="row">
-  <div class="col-md-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
-    </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-    <div class="pull-right">
-	<% if @product.quantity.present? && @product.quantity > 0 %>
-<%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %> <!--加入了链接和方法-->
-	<% else %>
-		已销售一空，无法购买
-	<% end %>
-    </div>
-  </div>
-</div>
 <script>
 
 /*
@@ -89,30 +64,26 @@ return true}else{if(z&&!a(this).prev().length){ac();return true}}g(a7,false)}}}}
 					<div class="col-md-5 single-top">	
 						<ul id="etalage">
 							<li>
+
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/si1.jpg" alt="" >
-									<img class="etalage_source_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/s2.jpg" alt="" >
+
+    <% if @product.image.present? %>
+      <%= image_tag(@product.image.medium.url, class: "etalage_thumb_image img-responsive") %>
+      <%= image_tag(@product.image.medium.url, class: "etalage_source_image img-responsive") %>
+
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "etalage_thumb_image img-responsive") %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "etalage_source_image img-responsive") %>
+    <% end %>
 								</a>
-							</li>
-							<li>
-								<img class="etalage_thumb_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/si2.jpg" alt="" >
-								<img class="etalage_source_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/s3.jpg" alt="" >
-							</li>
-							<li>
-								<img class="etalage_thumb_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/si.jpg" alt=""  >
-								<img class="etalage_source_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/s1.jpg" alt="" >
-							</li>
-						    <li>
-								<img class="etalage_thumb_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/si3.jpg"  alt="" >
-								<img class="etalage_source_image img-responsive" src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/s4.jpg" alt="" >
 							</li>
 						</ul>
 
 					</div>	
 					<div class="col-md-7 single-top-in">
 						<div class="single-para">
-							<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+							<h4> <%= @product.title %> </h4>
+							<p><%= @product.description %></p>
 							<div class="star">
 								<ul>
 									<li><i> </i></li>
@@ -128,7 +99,7 @@ return true}else{if(z&&!a(this).prev().length){ac();return true}}g(a7,false)}}}}
 							<div class="clearfix"> </div>
 							</div>
 							
-								<label  class="add-to">$32.8</label>
+								<label  class="add-to">$<%= @product.title %></label>
 							
 							<div class="available">
 								<h6>Available Options :</h6>
@@ -149,7 +120,11 @@ return true}else{if(z&&!a(this).prev().length){ac();return true}}g(a7,false)}}}}
 							</ul>
 						</div>
 							
-								<a href="#" class="cart ">More details</a>
+		<% if @product.quantity.present? && @product.quantity > 0 %>
+	<%= link_to("Add to Cart", add_to_cart_product_path(@product), :method => :post, :class => "cart") %> <!--加入了链接和方法-->
+		<% else %>
+			已销售一空，无法购买
+		<% end %>
 							
 						</div>
 					</div>
