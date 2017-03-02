@@ -107,11 +107,7 @@ return true}else{if(z&&!a(this).prev().length){ac();return true}}g(a7,false)}}}}
 									<li><i> </i></li>
 									<li><i> </i></li>
 								</ul>
-								<div class="review">
-									<a href="#"> 3 reviews </a>/
-									<a href="#">  Write a review</a>
-								</div>
-							<div class="clearfix"> </div>
+									<div class="clearfix"> </div>
 							</div>
 							
 								<label  class="add-to">$<%= @product.price%></label>
@@ -144,43 +140,19 @@ return true}else{if(z&&!a(this).prev().length){ac();return true}}g(a7,false)}}}}
 						</div>
 					</div>
 				<div class="clearfix"> </div>
-				<div class="product-top">
-		<div class="col-md-4 grid-product-in">	
-		<div class=" product-grid">	
-			<a href="single.html"><img class="img-responsive " src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/sh2.png" alt=""></a>		
-			<div class="shoe-in">
-				<h6><a href="single.html">Lorem Ipsum is simply</a></h6>
-				<label>$67.99</label>
-				<a href="single.html" class="store">FIND A STORE</a>
-			</div>
-			
-			<b class="plus-on">+</b>
-		</div>	
-		</div>
-		<div class="col-md-4 grid-product-in">	
-		<div class=" product-grid">	
-			<a href="single.html"><img class="img-responsive " src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/pr1.png" alt=""></a>
-			<div class="shoe-in">
-				<h6><a href="single.html">Lorem Ipsum is simply</a></h6>
-				<label>$67.99</label>
-				<a href="single.html" class="store">FIND A STORE</a>
-			</div>
-		
-			<b class="plus-on">+</b>
-		</div>
-		</div>
-		<div class="col-md-4 grid-product-in">	
-		<div class=" product-grid">	
-			<a href="single.html"><img class="img-responsive " src="https://s3-ap-northeast-1.amazonaws.com/fullstrack/pr.png" alt=""></a>
-			<div class="shoe-in">
-				<h6><a href="single.html">Lorem Ipsum is simply </a></h6>
-				<label>$67.99</label>
-				<a href="single.html" class="store">FIND A STORE</a>
-			</div>
-			
-			<b class="plus-on">+</b>
-		</div>
-		</div>
+								<div class="row review">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h3 class="reviews_title">
+      <%= @product.reviews.count %> Reviews
+    </h3>
+    <hr>
+    <div id="reivews">
+      <%= render @product.reviews%>
+      <hr>
+      <%= render "reviews/form"%>
+    </div>
+  </div>
+</div>
 	<div class="clearfix"> </div>
 	</div>
 				</div>
