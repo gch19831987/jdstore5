@@ -23,6 +23,10 @@
    <%= image_tag(@product.image.thumb.url) %>
  <% end %>
 
+  <div class="group">
+	<%= f.input :category, :collection => ['Running', 'Fitness', 'Tennis', 'Football', 'Golf'], :selected => 'YES' %>
+  </div>
+
  <div class="group">
    <%= f.input :image, as: :file %>
  </div>
