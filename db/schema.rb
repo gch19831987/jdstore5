@@ -41,18 +41,10 @@ ActiveRecord::Schema.define(version: 20170302084822) do
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "product_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "product_lists", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "product_name"
-    t.integer  "product_price"
+    t.float    "product_price"
     t.integer  "quantity"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
