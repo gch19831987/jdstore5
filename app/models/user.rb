@@ -13,4 +13,7 @@ class User < ApplicationRecord
   def admin?
 	is_admin
   end
+    def is_member_of?(group)
+      participated_groups.include?(group)
+    end
 end
