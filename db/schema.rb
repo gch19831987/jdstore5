@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 20170302084822) do
     t.text     "description"
     t.integer  "quantity"
     t.float    "price"
+    t.string   "category"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "image"
-    t.string   "category"
   end
 
   create_table "reviews", force: :cascade do |t|
