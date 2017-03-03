@@ -172,9 +172,9 @@
                  <%= link_to("Personal Order List", account_orders_path) %>
                </li>
              <% end %>
-              <li><%= link_to(content_tag(:i, 'Sing out', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
     <li> <%= link_to("My Groups", account_groups_path) %></li>
    <li> <%= link_to("My Posts", account_posts_path) %></li> 
+      <li><%= link_to(content_tag(:i, 'Sing out', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
     <li class="divider"> </li>
 
                     </ul>
@@ -184,7 +184,7 @@
 					</ul>
 					<div class="search-box">
 					    <div id="sb-search" class="sb-search">
-							<form>
+							<form action="/products" method="get">
 								<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
 								<input class="sb-search-submit" type="submit" value="">
 								<span class="sb-icon-search"> </span>
@@ -206,9 +206,6 @@
 				<a class="toggleMenu" href="#">Menu</a>
 				<ul class="nav">
 					<li class="active"><%= link_to("Running", products_path) %></li>
-					<li><%= link_to("Fitness", products_path) %></li>
-					<li><%= link_to("Tennis", products_path) %></li>
-					<li><%= link_to("Football", products_path) %></li>
 
 				</ul>
 			</div><!-- end h_menu4 -->
