@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 	end
   end
   resources :products
-  resources :groups
+  resources :groups do
+    resources :posts
+  end
 
   resources :products do
 	resources :reviews
