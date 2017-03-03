@@ -26,11 +26,11 @@
 			<div class="shoe-in">
 			<h6>
 		              <%= link_to product_path(product) do %>
-					$<%= product.title %>
+					<%= product.title %>
 			      <% end %>
 
 				</h6>
-				<label><%= product.price %></label>
+				<label>$<%= product.price %></label>
 		              <%= link_to product_path(product) do %>
 					<%= product.description%>
 			      <% end %>
